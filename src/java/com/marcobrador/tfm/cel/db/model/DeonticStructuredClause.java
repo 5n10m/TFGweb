@@ -1,3 +1,5 @@
+package com.marcobrador.tfm.cel.db.model;
+
 import com.marcobrador.tfm.cel.db.Utils;
 import com.marcobrador.tfm.cel.db.model.actions.*;
 import com.marcobrador.tfm.cel.db.model.constraints.*;

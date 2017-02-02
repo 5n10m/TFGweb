@@ -1,3 +1,4 @@
+package com.marcobrador.tfm.cel.db.model;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAttribute;

@@ -1,4 +1,4 @@
-import com.marcobrador.tfm.cel.db.model.OperativePart;
+package com.marcobrador.tfm.cel.db.model;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;

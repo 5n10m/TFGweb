@@ -1,3 +1,4 @@
+package com.marcobrador.tfm.cel.db.model;
 
 import com.marcobrador.tfm.cel.db.Utils;
 

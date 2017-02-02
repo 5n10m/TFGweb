@@ -1,3 +1,5 @@
+package com.marcobrador.tfm.cel.db.model;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
