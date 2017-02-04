@@ -35,11 +35,11 @@ public abstract class AbstractDao<K extends Serializable, T> {
      *
      * @return The entity loaded from the DB.
      */
-    public T getByKey(K key) {
+    public Object getByKey(K key) {
         Transaction tx = null;
         try {
             tx = getSession().beginTransaction();
-            T entity = getSession().get(mPersistentClass, key);
+            Object entity = getSession().get(mPersistentClass, key);
             tx.commit();
             return entity;
         } catch (HibernateException e) {
@@ -81,7 +81,7 @@ public abstract class AbstractDao<K extends Serializable, T> {
      * @param key The key of the entity to be removed.
      */
     public void delete(K key) {
-        delete(getByKey(key));
+        delete((T) getByKey(key));
     }
 
     /**

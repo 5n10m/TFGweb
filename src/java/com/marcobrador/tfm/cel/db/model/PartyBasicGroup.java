@@ -51,7 +51,24 @@ public abstract class PartyBasicGroup {
     /**
      * @return a String representing the name of the specific implementation of this party basic group.
      */
-    protected abstract String getType();
+    public abstract String getType();
+    
+    public String getName() {
+        return name;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+    
 
     @Override
     public String toString() {

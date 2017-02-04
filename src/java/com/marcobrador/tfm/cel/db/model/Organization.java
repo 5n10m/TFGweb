@@ -15,7 +15,7 @@ public class Organization extends PartyBasicGroup {
     }
 
     @Override
-    protected String getType() {
+    public String getType() {
         return Organization.class.getSimpleName();
     }
 

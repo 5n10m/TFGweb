@@ -14,7 +14,7 @@ public class Person extends PartyBasicGroup {
     }
 
     @Override
-    protected String getType() {
+    public String getType() {
         return Person.class.getSimpleName();
     }
 

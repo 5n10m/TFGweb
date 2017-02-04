@@ -100,7 +100,7 @@ public class Main {
                 generatedContracts.put(contractId, contract);
             }
             for (String contractId : generatedContracts.keySet()) {
-                Contract retrievedContract = contractDao.getByKey(contractId);
+                Object retrievedContract = contractDao.getByKey(contractId);
                 if (retrievedContract.equals(generatedContracts.get(contractId))) {
                     System.out.println("Contract persisted/retrieved successfully: " + contractId);
                 } else {
@@ -146,7 +146,7 @@ public class Main {
         }
 
         // Retrieve contract from DB and check that it's equal to the one that we wanted to persist.
-        Contract retrieved = contractDao.getByKey(id);
+        Object retrieved = contractDao.getByKey(id);
         if (!contract.equals(retrieved)) {
             System.out.println("Contract retrieved from DB is not equal to the original one.");
             System.out.println("Original:");
@@ -156,7 +156,7 @@ public class Main {
         }
 
         try {
-            CelContractParser.getInstance().marshallContract(retrieved, new File(path + "_retrieved"));
+            CelContractParser.getInstance().marshallContract((Contract) retrieved, new File(path + "_retrieved"));
         } catch (Exception e) {
             System.out.println("Failed to marshall XML file: " + e.getMessage());
             e.printStackTrace();
@@ -186,7 +186,7 @@ public class Main {
      */
     private static void printContract(String contractId) {
         try {
-            Contract contract = new ContractDao().getByKey(contractId);
+            Object contract = new ContractDao().getByKey(contractId);
             System.out.println(contract);
         } catch (Exception e) {
             System.out.println("Failed to get contract <" + contractId + ">: " + e.getMessage());
