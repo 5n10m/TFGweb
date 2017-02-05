@@ -53,7 +53,7 @@ public class ConditionalCreator {
                         Core.add("dc:description");
                             Core.set(pbg.getDescription());
                         Core.pop();
-                        Core.push();
+                        //ADD SIGNATORY
                     Core.pop();
                 }
                 Else if(pbg.Type() == "Person"){
@@ -71,7 +71,7 @@ public class ConditionalCreator {
                         Core.add("dc:description");
                             Core.set(pbg.getDescription());
                         Core.pop();
-                        Core.push();
+                        //ADD SIGNATORY
                     Core.pop();
                 }
                 Core.push();
@@ -81,6 +81,25 @@ public class ConditionalCreator {
             Core.pop();
         }
         //BODY
-        
+        com.marcobrador.tfm.cel.db.model.Body b = c.getBody();
+        Core.push();
+        Core.add("cel-core:Body");
+        OperativePart op = c.getBody().getOperativePart();
+            Core.push();
+            Core.add("cel-core:OperativePart");
+            for (DeonticStructuredClause d : op.getClauses()){
+                Core.push();
+                Core.add(/*QUE COJONES VA AQUI? como se sabe si es ipre, permision, ...*/"");
+                    Core.attr("id",d.getId());
+                    //Core.attr("number", d.getNumber());
+                    Core.push();
+                    Core.add("cel-core:Subject");
+                        Core.attr("partyRef",d.get);
+                    /* AQUI LA MOVIDA DE LAS CONDICIONES */
+                    Core.pop();
+                Core.pop();
+            }
+            Core.pop();
+        Core.pop();    
     }
 }

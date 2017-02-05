@@ -89,6 +89,30 @@ public abstract class DeonticStructuredClause {
         return constraint;
     }
 
+    public Set<PreCondition> getPreConditions() {
+        return preConditions;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public CelObject getCelObject() {
+        return celObject;
+    }
+
+    public Item getResultantObject() {
+        return resultantObject;
+    }
+
+    public Issuer getIssuer() {
+        return issuer;
+    }
+
+    public Contract getContract() {
+        return contract;
+    }
+    
     @Override
     public String toString() {
         String result = "id: " + id + "\n"
