@@ -38,7 +38,7 @@ public class ConditionalCreator {
             Core.add("cel-core:Party");
                 Core.attr("Id", p.getId());
                 PartyBasicGroup pbg = p.getPartyBasicGroup();
-                If(pbg.getType() == "Organization"){
+                if(pbg.getType().equals("Organization")){
                     Core.push();
                     Core.add("cel-core:Organization");
                         Core.push();
@@ -56,7 +56,7 @@ public class ConditionalCreator {
                         //ADD SIGNATORY
                     Core.pop();
                 }
-                Else if(pbg.Type() == "Person"){
+                else if(pbg.getType().equals("Person")){
                     Core.push();
                     Core.add("cel-core:Person");
                         Core.push();
@@ -94,7 +94,7 @@ public class ConditionalCreator {
                     //Core.attr("number", d.getNumber());
                     Core.push();
                     Core.add("cel-core:Subject");
-                        Core.attr("partyRef",d.get);
+                        //Core.attr("partyRef",d.get);
                     /* AQUI LA MOVIDA DE LAS CONDICIONES */
                     Core.pop();
                 Core.pop();
